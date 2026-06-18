@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boba Tealight - Cozy Bubble Tea, Coffee & Snacks in Gilbert, AZ</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bobaCream: '#fdfbf7',
+                        bobaBrown: '#c48b71',
+                        bobaBrownDark: '#5c3e35',
+                        bobaEspresso: '#2c1a11',
+                        matchaGreen: '#a3b899',
+                        matchaGreenDark: '#7d9671',
+                        galaxyRose: '#e8b4b8',
+                    },
+                    fontFamily: {
+                        quicksand: ['Quicksand', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            background-color: #fdfbf7;
+            font-family: 'Quicksand', sans-serif;
+            color: #2c1a11;
+        }
+        /* Cozy floating background animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+        .float-delayed-animation {
+            animation: float-delayed 8s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+    </style>
+</head>
+<body class="bg-bobaCream text-bobaEspresso antialiased">
+
+    <!-- Header Navigation -->
+    <header class="sticky top-0 z-50 bg-bobaCream/90 backdrop-blur-md border-b border-bobaBrown/10 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center space-x-2">
+                <div class="w-10 h-10 bg-bobaBrown rounded-full flex items-center justify-center text-bobaCream">
+                    <i class="fa-solid fa-mug-hot text-lg"></i>
+                </div>
+                <span class="font-playfair text-2xl font-bold tracking-tight text-bobaEspresso">Boba <span class="text-bobaBrown">Tealight</span></span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 text-sm font-semibold tracking-wide">
+                <a href="#about" class="hover:text-bobaBrown transition-colors">Our Vibe</a>
+                <a href="#menu" class="hover:text-bobaBrown transition-colors">Menu</a>
+                <a href="#customizer" class="hover:text-bobaBrown transition-colors">Interactive Cup</a>
+                <a href="#reviews" class="hover:text-bobaBrown transition-colors">Reviews</a>
+                <a href="#location" class="hover:text-bobaBrown transition-colors">Visit Us</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="tel:+14807887117" class="text-sm font-semibold hover:text-bobaBrown transition-colors">
+                    <i class="fa-solid fa-phone mr-1"></i> (480) 788-7117
+                </a>
+                <a href="#location" class="bg-bobaBrown text-bobaCream px-5 py-2.5 rounded-full text-sm font-semibold shadow-sm hover:bg-bobaBrownDark transition-colors">
+                    Order Online
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-bobaEspresso hover:text-bobaBrown transition-colors">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-bobaCream border-b border-bobaBrown/10 px-4 pt-2 pb-6 space-y-3">
+            <a href="#about" class="block font-semibold py-2 hover:text-bobaBrown">Our Vibe</a>
+            <a href="#menu" class="block font-semibold py-2 hover:text-bobaBrown">Menu</a>
+            <a href="#customizer" class="block font-semibold py-2 hover:text-bobaBrown">Interactive Cup</a>
+            <a href="#reviews" class="block font-semibold py-2 hover:text-bobaBrown">Reviews</a>
+            <a href="#location" class="block font-semibold py-2 hover:text-bobaBrown">Visit Us</a>
+            <div class="pt-4 border-t border-bobaBrown/10 flex flex-col space-y-3">
+                <a href="tel:+14807887117" class="font-semibold text-center py-2 bg-bobaCream border border-bobaBrown text-bobaBrown rounded-full">
+                    <i class="fa-solid fa-phone mr-1"></i> Call Store
+                </a>
+                <a href="#location" class="bg-bobaBrown text-bobaCream text-center py-2.5 rounded-full font-semibold">
+                    Order Online
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 md:py-32">
+        <!-- Floating decorative boba shapes -->
+        <div class="absolute top-1/4 left-10 w-24 h-24 bg-bobaBrown/10 rounded-full blur-xl float-animation"></div>
+        <div class="absolute bottom-1/4 right-10 w-32 h-32 bg-matchaGreen/10 rounded-full blur-xl float-delayed-animation"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left space-y-6">
+                    <div class="inline-flex items-center gap-2 bg-bobaBrown/10 text-bobaBrownDark px-4 py-1.5 rounded-full text-xs font-semibold">
+                        <i class="fa-solid fa-star text-yellow-500"></i>
+                        <span>4.9 Rated (860+ Reviews) in Gilbert</span>
+                    </div>
+                    <h1 class="font-playfair text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-bobaEspresso">
+                        Your Friendly <br class="hidden sm:inline">
+                        <span class="text-bobaBrown">Neighborhood</span> Cozy Spot
+                    </h1>
+                    <p class="text-lg text-bobaEspresso/80 max-w-lg mx-auto lg:mx-0">
+                        Welcome to Boba Tealight! Explore premium bubble teas, Vietnamese Egg Coffee, fresh savory snacks, and Vietnamese Banh Mi sandwiches. Step in, grab a board game, play some arcade classics, and find your vibe.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#menu" class="bg-bobaBrown text-bobaCream px-8 py-3.5 rounded-full font-semibold shadow-md hover:bg-bobaBrownDark hover:shadow-lg transition-all text-center">
+                            Explore Our Menu
+                        </a>
+                        <a href="#customizer" class="bg-white border border-bobaBrown/20 text-bobaBrownDark px-8 py-3.5 rounded-full font-semibold hover:bg-bobaCream/50 transition-all text-center flex items-center justify-center gap-2">
+                            <span>Customize Your Cup</span>
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </a>
+                    </div>
+                    <div class="pt-4 flex flex-wrap justify-center lg:justify-start gap-6 text-sm text-bobaEspresso/70">
+                        <span><i class="fa-solid fa-check text-matchaGreenDark mr-1"></i> Dine-in</span>
+                        <span><i class="fa-solid fa-check text-matchaGreenDark mr-1"></i> Takeaway</span>
+                        <span><i class="fa-solid fa-check text-matchaGreenDark mr-1"></i> Delivery</span>
+                    </div>
+                </div>
+
+                <!-- Graphic Showcase -->
+                <div class="relative flex justify-center">
+                    <div class="relative w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-bobaBrown/20 to-matchaGreen/10 flex items-center justify-center overflow-hidden shadow-2xl">
+                        <!-- Custom Boba Cup Graphic -->
+                        <div class="w-48 h-72 bg-white/95 border-2 border-bobaBrown/20 rounded-b-3xl rounded-t-lg relative shadow-inner overflow-hidden flex flex-col justify-end p-2 float-animation">
+                            <!-- Straw -->
+                            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-6 h-20 bg-matchaGreen rounded-full transform rotate-12 origin-bottom"></div>
+                            
+                            <!-- Liquid content -->
+                            <div class="w-full h-4/5 bg-gradient-to-t from-bobaBrown/70 via-bobaCream to-bobaCream/40 rounded-b-2xl flex flex-col justify-end relative">
+                                <!-- Ice cubes (mini divs) -->
+                                <div class="absolute top-10 left-6 w-6 h-6 bg-white/50 rounded-md rotate-12"></div>
+                                <div class="absolute top-14 right-8 w-5 h-5 bg-white/50 rounded-md -rotate-12"></div>
+                                
+                                <!-- Boba Pearls -->
+                                <div class="grid grid-cols-5 gap-1.5 p-2 bg-bobaEspresso/90 rounded-b-2xl h-1/4 w-full">
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                    <div class="w-4 h-4 bg-bobaEspresso rounded-full border border-stone-800"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Vibe & About Section -->
+    <section id="about" class="py-20 bg-white/80 border-y border-bobaBrown/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <h2 class="font-playfair text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Leafy Greenery, Wooden Accents & Cozy Games
+                    </h2>
+                    <p class="text-base text-bobaEspresso/80 leading-relaxed">
+                        At Boba Tealight, we’ve created a woody and leafy escape right in the Val Vista Towne Center. It’s a space where you can step back, relax, and savor your favorite beverage.
+                    </p>
+                    <p class="text-base text-bobaEspresso/80 leading-relaxed">
+                        Whether you are here to tackle friends at a classic board game, play on our retro mini claw machines and arcade setups, or simply sit down for some study time, our environment is welcoming for family, friends, and kids of all ages.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-bobaCream rounded-xl border border-bobaBrown/10">
+                            <h3 class="font-semibold text-lg text-bobaBrownDark mb-1">Asian-Owned</h3>
+                            <p class="text-xs text-bobaEspresso/70">Proudly rooted in authentic Asian beverage traditions and hospitable care.</p>
+                        </div>
+                        <div class="p-4 bg-bobaCream rounded-xl border border-bobaBrown/10">
+                            <h3 class="font-semibold text-lg text-bobaBrownDark mb-1">Friendly Perks</h3>
+                            <p class="text-xs text-bobaEspresso/70">Join our local punch-card program to enjoy sweet returns on repeat visits.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="h-64 bg-stone-100 rounded-2xl overflow-hidden shadow-sm relative group">
+                        <!-- Placeholder Vibe Image representing Leafy Woody Atmosphere -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                        <div class="absolute inset-0 flex items-end p-4 z-20 text-white font-semibold">Leafy & Woody Design</div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&q=80&w=600');"></div>
+                    </div>
+                    <div class="h-64 bg-stone-100 rounded-2xl overflow-hidden shadow-sm relative group translate-y-6">
+                        <!-- Placeholder Image representing Board Games / Cozy Setup -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent z-10"></div>
+                        <div class="absolute inset-0 flex items-end p-4 z-20 text-white font-semibold">Fun Board Games</div>
+                        <div class="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105" style="background-image: url('https://images.unsplash.com/photo-1610890716171-6b1bb98ffd09?auto=format&fit=crop&q=80&w=600');"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-playfair text-3xl sm:text-4xl font-extrabold tracking-tight">Our Signature Menu</h2>
+                <p class="text-bobaEspresso/70 max-w-lg mx-auto">From hand-whipped egg coffees to crisp, hot popcorn chicken. Standard sweetness and ice levels can be adjusted to your exact liking!</p>
+                
+                <!-- Category Tabs -->
+                <div class="flex justify-center space-x-2 pt-4">
+                    <button onclick="switchTab('drinks')" id="tab-drinks" class="menu-tab px-6 py-2 rounded-full font-semibold text-sm transition-all bg-bobaBrown text-bobaCream shadow-sm">
+                        Signature Drinks
+                    </button>
+                    <button onclick="switchTab('food')" id="tab-food" class="menu-tab px-6 py-2 rounded-full font-semibold text-sm transition-all bg-white border border-bobaBrown/20 text-bobaBrownDark hover:bg-bobaCream">
+                        Savory Food & Snacks
+                    </button>
+                </div>
+            </div>
+
+            <!-- Drinks Grid -->
+            <div id="menu-drinks" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Drink 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Vietnamese Egg Coffee</h3>
+                        <span class="text-bobaBrown font-bold">$6.75</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">A beautiful, traditional favorite. Rich frothed egg yolk poured over sweet condensed milk and robust espresso.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">House Specialty</span>
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Hot / Iced</span>
+                    </div>
+                </div>
+
+                <!-- Drink 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Galaxy Rose Lychee</h3>
+                        <span class="text-bobaBrown font-bold">$6.25</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">A floral, mesmerizing tea base blended with sweet lychee and topped with popping boba for a galaxy burst.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Best Seller</span>
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Popping Boba Included</span>
+                    </div>
+                </div>
+
+                <!-- Drink 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Matcha Strawberry Tea</h3>
+                        <span class="text-bobaBrown font-bold">$6.50</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Beautiful dual layers of earthy high-grade matcha green tea layered over fresh, sweet strawberry purée.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Earthy & Fruity</span>
+                    </div>
+                </div>
+
+                <!-- Drink 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Brown Sugar Milk Tea</h3>
+                        <span class="text-bobaBrown font-bold">$5.95</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Classic, rich black milk tea with deep brown sugar syrup stripes and freshly cooked chewy tapioca boba.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Chewy Boba Included</span>
+                    </div>
+                </div>
+
+                <!-- Drink 5 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Jasmine Green Cheese Tea</h3>
+                        <span class="text-bobaBrown font-bold">$6.00</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Light, aromatic Jasmine Green Tea topped with a rich, savory layer of salted cheese foam cream.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Savory Foam</span>
+                    </div>
+                </div>
+
+                <!-- Drink 6 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm hover:shadow-md transition-shadow">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Galaxy Peach Tea</h3>
+                        <span class="text-bobaBrown font-bold">$5.75</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Fragrant floral black tea infused with natural peach flavor and shimmering stellar ingredients.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Refreshing</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Food Grid (Hidden by Default) -->
+            <div id="menu-food" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <!-- Food 1 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Authentic Vietnamese Banh Mi</h3>
+                        <span class="text-bobaBrown font-bold">$8.25</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Freshly toasted local French baguette loaded with crisp pickled carrots, cucumber, fresh cilantro, and savory meats.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">House Favorite</span>
+                    </div>
+                </div>
+
+                <!-- Food 2 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Salty-Sweet Popcorn Chicken</h3>
+                        <span class="text-bobaBrown font-bold">$7.95</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Deeply seasoned, tender, and crispy chicken bites with savory spices. Served with standard crispy golden fries.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Perfect to Share</span>
+                    </div>
+                </div>
+
+                <!-- Food 3 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Crispy Veggie Samosas</h3>
+                        <span class="text-bobaBrown font-bold">$5.50</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Crispy pastry shells stuffed with seasoned spiced peas and potato mix. Crispy comfort bite.</p>
+                </div>
+
+                <!-- Food 4 -->
+                <div class="bg-white p-6 rounded-2xl border border-bobaBrown/10 shadow-sm">
+                    <div class="flex justify-between items-start mb-2">
+                        <h3 class="font-semibold text-lg text-bobaEspresso">Golden Fried Tofu</h3>
+                        <span class="text-bobaBrown font-bold">$6.50</span>
+                    </div>
+                    <p class="text-sm text-bobaEspresso/70">Lightly crisped golden tofu cubes served with our signature sweet-and-savory dipping sauce.</p>
+                    <div class="mt-4 flex gap-2">
+                        <span class="text-[10px] uppercase bg-bobaCream text-bobaBrownDark px-2 py-0.5 rounded font-bold">Vegan-Friendly</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom sweetness/ice customizer Interactive Section -->
+    <section id="customizer" class="py-20 bg-matchaGreen/10">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-12">
+                <h2 class="font-playfair text-3xl sm:text-4xl font-extrabold text-bobaEspresso">Build Your Vibe</h2>
+                <p class="text-bobaEspresso/70 max-w-lg mx-auto">Every palate is different. Adjust your sweetness, level of ice, and toppings exactly how you like it before ordering in store.</p>
+            </div>
+
+            <div class="bg-white p-6 sm:p-10 rounded-3xl shadow-xl border border-bobaBrown/10 grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Customization Controls -->
+                <div class="space-y-6">
+                    <div>
+                        <label class="block text-sm font-bold text-bobaEspresso mb-3">1. Select Drink Base</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="customizeDrink('Matcha Strawberry', '#a3b899')" class="custom-base-btn border border-bobaBrown/30 bg-bobaCream text-bobaEspresso p-3 rounded-xl text-sm font-semibold hover:border-bobaBrown text-left transition-all">
+                                Matcha Strawberry
+                            </button>
+                            <button onclick="customizeDrink('Galaxy Rose Lychee', '#e8b4b8')" class="custom-base-btn border border-bobaBrown/30 bg-bobaCream text-bobaEspresso p-3 rounded-xl text-sm font-semibold hover:border-bobaBrown text-left transition-all">
+                                Galaxy Rose Lychee
+                            </button>
+                            <button onclick="customizeDrink('Classic Milk Tea', '#c48b71')" class="custom-base-btn border border-bobaBrown/30 bg-bobaCream text-bobaEspresso p-3 rounded-xl text-sm font-semibold hover:border-bobaBrown text-left transition-all">
+                                Classic Milk Tea
+                            </button>
+                            <button onclick="customizeDrink('Vietnamese Coffee', '#5c3e35')" class="custom-base-btn border border-bobaBrown/30 bg-bobaCream text-bobaEspresso p-3 rounded-xl text-sm font-semibold hover:border-bobaBrown text-left transition-all">
+                                Vietnamese Coffee
+                            </button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-bobaEspresso mb-3">2. Sweetness Level</label>
+                        <div class="grid grid-cols-4 gap-2">
+                            <button onclick="customizeSweetness('0% Sweet')" class="custom-sweet-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Unsweetened</button>
+                            <button onclick="customizeSweetness('25% Sweet')" class="custom-sweet-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Mild (25%)</button>
+                            <button onclick="customizeSweetness('50% Sweet')" class="custom-sweet-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Half (50%)</button>
+                            <button onclick="customizeSweetness('100% Sweet')" class="custom-sweet-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Standard</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-bobaEspresso mb-3">3. Ice Level</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button onclick="customizeIce('No Ice')" class="custom-ice-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">No Ice</button>
+                            <button onclick="customizeIce('Less Ice')" class="custom-ice-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Less Ice</button>
+                            <button onclick="customizeIce('Standard Ice')" class="custom-ice-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Standard</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-bold text-bobaEspresso mb-3">4. Choose Your Pearl Style</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button onclick="customizeToppings('Chewy Black Boba')" class="custom-toppings-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Chewy Black Boba</button>
+                            <button onclick="customizeToppings('Popping Boba')" class="custom-toppings-btn border border-bobaBrown/30 bg-bobaCream text-xs font-semibold py-2 rounded-lg hover:border-bobaBrown transition-all">Fruit Popping Boba</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cup Visual Representation -->
+                <div class="flex flex-col items-center justify-center bg-bobaCream rounded-2xl p-6 border border-bobaBrown/10">
+                    <h3 class="font-playfair text-xl font-bold mb-4 text-center">Your Setup</h3>
+                    
+                    <div class="w-40 h-64 bg-white border-2 border-bobaBrown/20 rounded-b-3xl rounded-t-lg relative shadow-md overflow-hidden flex flex-col justify-end p-2 mb-6">
+                        <!-- Liquid Color Block (JS updates this) -->
+                        <div id="visual-liquid" class="w-full h-4/5 bg-bobaBrown/70 rounded-b-2xl transition-all duration-500 relative flex flex-col justify-end">
+                            
+                            <!-- Visual Toppings inside fluid -->
+                            <div id="visual-boba" class="grid grid-cols-4 gap-1 p-2 bg-bobaEspresso/90 rounded-b-2xl h-1/4 w-full transition-all duration-300">
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                                <div class="w-3.5 h-3.5 bg-stone-900 rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Label Output -->
+                    <div class="text-center space-y-1">
+                        <p class="font-bold text-lg" id="cup-title">Classic Milk Tea</p>
+                        <p class="text-xs text-bobaEspresso/70">
+                            Sweetness: <span id="cup-sweetness" class="font-semibold text-bobaBrown">Half (50%)</span>
+                        </p>
+                        <p class="text-xs text-bobaEspresso/70">
+                            Ice level: <span id="cup-ice" class="font-semibold text-bobaBrown">Standard</span>
+                        </p>
+                        <p class="text-xs text-bobaEspresso/70">
+                            Topping: <span id="cup-toppings" class="font-semibold text-bobaBrown">Chewy Black Boba</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center space-y-4 mb-16">
+                <h2 class="font-playfair text-3xl sm:text-4xl font-extrabold tracking-tight">Loved By The Community</h2>
+                <div class="flex justify-center items-center gap-1 text-yellow-500 text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <span class="text-bobaEspresso font-bold ml-2">4.9 Star Average (866 Reviews)</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-bobaCream p-8 rounded-2xl border border-bobaBrown/10 relative">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-bobaEspresso/80 text-sm leading-relaxed mb-6 italic">
+                        "Came here after I picked my son up from school to get him a Matcha Strawberry Tea and myself a Galaxy Rose Lychee with popping Boba. The drinks here are always delicious, you get to pick your sweetness level and ice levels so it's customized..."
+                    </p>
+                    <div>
+                        <h4 class="font-bold text-sm">Robert K.</h4>
+                        <span class="text-[10px] text-bobaEspresso/50 uppercase font-semibold">Local Guide</span>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="bg-bobaCream p-8 rounded-2xl border border-bobaBrown/10 relative">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-bobaEspresso/80 text-sm leading-relaxed mb-6 italic">
+                        "Surprisingly tasty boba & milk tea shop with a selection of Vietnamese sandwiches (banh mi) that are delicious. Cash, credit/debit card payments accepted. Punch-card rewards program for frequent customers. Very friendly service."
+                    </p>
+                    <div>
+                        <h4 class="font-bold text-sm">Paul</h4>
+                        <span class="text-[10px] text-bobaEspresso/50 uppercase font-semibold">Local Guide</span>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="bg-bobaCream p-8 rounded-2xl border border-bobaBrown/10 relative">
+                    <div class="flex items-center gap-1 text-yellow-500 mb-4 text-sm">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="text-bobaEspresso/80 text-sm leading-relaxed mb-6 italic">
+                        "Best boba I’ve had in Arizona love the staff and love the atmosphere if you're looking for good quality boba that isn’t so expensive go here they also have options for how sweet it can be."
+                    </p>
+                    <div>
+                        <h4 class="font-bold text-sm">Danny Phantom</h4>
+                        <span class="text-[10px] text-bobaEspresso/50 uppercase font-semibold">Verified Reviewer</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visit Us / Location Section -->
+    <section id="location" class="py-20 bg-bobaCream border-t border-bobaBrown/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Location Details -->
+                <div class="space-y-6">
+                    <h2 class="font-playfair text-3xl sm:text-4xl font-extrabold tracking-tight">Drop By & Say Hello</h2>
+                    <p class="text-bobaEspresso/80">
+                        Conveniently located in the **Val Vista Towne Center** in Gilbert, AZ. Find us right on Warner Rd. We offer indoor seating with board games and convenient takeaway and delivery options!
+                    </p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-bobaBrown/10 flex items-center justify-center text-bobaBrown text-lg shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Our Address</h4>
+                                <p class="text-sm text-bobaEspresso/80">1435 E Warner Rd #B101, Gilbert, AZ 85296, United States</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-bobaBrown/10 flex items-center justify-center text-bobaBrown text-lg shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Opening Hours</h4>
+                                <p class="text-sm text-bobaEspresso/80">Every Day: 11:00 AM – 9:00 PM</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-bobaBrown/10 flex items-center justify-center text-bobaBrown text-lg shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold">Phone Support</h4>
+                                <a href="tel:+14807887117" class="text-sm text-bobaBrown hover:underline font-semibold">+1 (480) 788-7117</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Placeholder -->
+                <div class="rounded-2xl overflow-hidden shadow-md border border-bobaBrown/20 h-96 relative bg-stone-100">
+                    <!-- Real Map Embed centered on the address -->
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3334.3438865666115!2d-111.7584145!3d33.3424106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x872ba9a7cf091bf1%3A0x633da5ee882776c5!2s1435%20E%20Warner%20Rd%20b101%2C%20Gilbert%2C%20AZ%2085296%2C%20USA!5e0!3m2!1sen!2sin!4v1710000000000!5m2!1sen!2sin" 
+                        class="w-full h-full" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-bobaEspresso text-stone-300 py-12 border-t border-bobaBrown/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-stone-800">
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-bobaBrown rounded-full flex items-center justify-center text-bobaCream">
+                            <i class="fa-solid fa-mug-hot"></i>
+                        </div>
+                        <span class="font-playfair text-xl font-bold text-white">Boba Tealight</span>
+                    </a>
+                    <p class="text-xs text-stone-400">
+                        Proudly Asian-owned neighborhood boba tea & coffee shop in Arizona. Creating space for connections, games, and wonderful drinks.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3">Quick Navigation</h4>
+                    <ul class="space-y-2 text-xs text-stone-400">
+                        <li><a href="#about" class="hover:text-white transition-colors">Our Story</a></li>
+                        <li><a href="#menu" class="hover:text-white transition-colors">Menu Specialties</a></li>
+                        <li><a href="#customizer" class="hover:text-white transition-colors">Interactive Beverage Customizer</a></li>
+                        <li><a href="#reviews" class="hover:text-white transition-colors">Guest Reviews</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-sm text-white mb-3">Rewards Program</h4>
+                    <p class="text-xs text-stone-400 mb-4">
+                        We offer rewards cards for frequent customers. Drop by to pick up your standard physical punch-card next time you purchase!
+                    </p>
+                    <div class="flex gap-2">
+                        <a href="#" class="w-8 h-8 bg-stone-800 rounded-full flex items-center justify-center text-stone-300 hover:text-white hover:bg-bobaBrown transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 bg-stone-800 rounded-full flex items-center justify-center text-stone-300 hover:text-white hover:bg-bobaBrown transition-colors"><i class="fa-brands fa-facebook-f text-sm"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="pt-8 flex flex-col sm:flex-row justify-between items-center text-xs text-stone-500">
+                <span>&copy; <span id="current-year"></span> Boba Tealight Gilbert. All rights reserved.</span>
+                <span>Designed with pride.</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Customizer & Tab Toggle JS -->
+    <script>
+        // Set dynamic footer year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Button Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Hide mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Tab selection for Menu Section
+        function switchTab(category) {
+            const tabs = document.querySelectorAll('.menu-tab');
+            const drinksContainer = document.getElementById('menu-drinks');
+            const foodContainer = document.getElementById('menu-food');
+
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-bobaBrown', 'text-bobaCream', 'shadow-sm');
+                tab.classList.add('bg-white', 'border', 'border-bobaBrown/20', 'text-bobaBrownDark');
+            });
+
+            if (category === 'drinks') {
+                document.getElementById('tab-drinks').className = 'menu-tab px-6 py-2 rounded-full font-semibold text-sm transition-all bg-bobaBrown text-bobaCream shadow-sm';
+                drinksContainer.classList.remove('hidden');
+                foodContainer.classList.add('hidden');
+            } else if (category === 'food') {
+                document.getElementById('tab-food').className = 'menu-tab px-6 py-2 rounded-full font-semibold text-sm transition-all bg-bobaBrown text-bobaCream shadow-sm';
+                drinksContainer.classList.add('hidden');
+                foodContainer.classList.remove('hidden');
+            }
+        }
+
+        // Customizer Interaction Engine
+        function customizeDrink(name, colorHex) {
+            document.getElementById('cup-title').innerText = name;
+            document.getElementById('visual-liquid').style.backgroundColor = colorHex;
+        }
+
+        function customizeSweetness(sweetnessText) {
+            document.getElementById('cup-sweetness').innerText = sweetnessText;
+        }
+
+        function customizeIce(iceText) {
+            document.getElementById('cup-ice').innerText = iceText;
+        }
+
+        function customizeToppings(toppingText) {
+            document.getElementById('cup-toppings').innerText = toppingText;
+            const bobaVisual = document.getElementById('visual-boba');
+            
+            if (toppingText === 'Popping Boba') {
+                // Change visually to a colorful popping boba style
+                bobaVisual.style.backgroundColor = '#fbbf24';
+            } else {
+                bobaVisual.style.backgroundColor = '#1c1917';
+            }
+        }
+    </script>
+</body>
+</html>
